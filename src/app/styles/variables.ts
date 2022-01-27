@@ -4,6 +4,6 @@ export const variables = {
   },
   fontSize: {},
   fontFamily: {
-    large: 
+    large: '2rem'
   }
 };
