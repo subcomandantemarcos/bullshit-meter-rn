@@ -1,9 +1,9 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
-import { TouchableHighlight } from 'react-native-gesture-handler';
+import { AppButton } from '../../shared/button';
 import { AppScreen } from '../../shared/screen/component';
 import { Svg } from '../../shared/svg';
-import { createStyles } from '../../styles';
+import { createStyles, variables } from '../../styles';
 
 export function LoginScreen(): JSX.Element {
   const Logo = Svg(require('../../../assets/images/logo.svg'));
@@ -20,25 +20,25 @@ export function LoginScreen(): JSX.Element {
       <View style={styles.mainScreen}>
         <Image style={{ minWidth: '100%', height: '100%', resizeMode: 'cover' }} source={require('../../../assets/images/login-foreground.png')} />
       </View>
-      <View style={styles.footerScreen}>
-        <TouchableHighlight>
-          <View style={[styles.button, { backgroundColor: 'black' }]}>
+      <View style={styles.buttonsContainer}>
+        <AppButton style={{ backgroundColor: 'black' }}>
+          <View style={styles.iconButton}>
             <Apple />
-            <Text style={{ color: 'white', marginLeft: 10 }}>Continue with apple</Text>
+            <Text style={{ color: 'white', marginLeft: 10, lineHeight: 22 }}>Continue with apple</Text>
           </View>
-        </TouchableHighlight>
-        <TouchableHighlight>
-          <View style={[styles.button, { backgroundColor: 'white', borderColor: '#518EF8', borderWidth: 2 }]}>
+        </AppButton>
+        <AppButton style={{ borderColor: variables.color.blue }} isOutlined>
+          <View style={styles.iconButton}>
             <Google />
-            <Text style={{ color: '#518EF8', marginLeft: 10 }}>Continue with apple</Text>
+            <Text style={{ color: variables.color.blue, marginLeft: 10, lineHeight: 22 }}>Continue with google</Text>
           </View>
-        </TouchableHighlight>
-        <TouchableHighlight>
-          <View style={[styles.button, { backgroundColor: '#1B6DD1' }]}>
+        </AppButton>
+        <AppButton style={{ backgroundColor: variables.color.blueDark, borderColor: variables.color.blueDark }}>
+          <View style={styles.iconButton}>
             <Facebook />
-            <Text style={{ color: 'white', marginLeft: 10 }}>Continue with apple</Text>
+            <Text style={{ color: variables.color.white, marginLeft: 10, lineHeight: 22 }}>Continue with facebook</Text>
           </View>
-        </TouchableHighlight>
+        </AppButton>
       </View>
     </AppScreen>
   );
@@ -47,7 +47,13 @@ export function LoginScreen(): JSX.Element {
 const styles = createStyles({
   screen: {
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    paddingHorizontal: 22
+  },
+  iconButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   headerScreen: {
     marginTop: 30,
@@ -57,7 +63,7 @@ const styles = createStyles({
     width: '100%',
     aspectRatio: 1 * 2.09
   },
-  footerScreen: {
+  buttonsContainer: {
     marginBottom: 40,
     justifyContent: 'flex-end',
     alignItems: 'center'
@@ -67,13 +73,4 @@ const styles = createStyles({
     fontSize: 28,
     textAlign: 'center'
   },
-  button: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'flex-end',
-    minWidth: 330,
-    marginVertical: 8,
-    borderRadius: 15,
-    paddingVertical: 16
-  }
 });
