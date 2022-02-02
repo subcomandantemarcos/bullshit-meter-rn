@@ -1,17 +1,21 @@
-import { StyleSheet, View } from 'react-native';
-import { variables } from '../../styles/variables';
+import React from 'react';
+import { StyleProp, View, ViewStyle } from 'react-native';
+import { createStyles, variables } from '../../styles';
 
 export function AppScreen(props: {
-  children: React.ReactNode
+  children?: React.ReactNode,
+  elementStyle?: StyleProp<ViewStyle>
 }): JSX.Element {
+  const { children, elementStyle } = props;
+  
   return (
-    <View style={styles.screen}>
-
+    <View style={[styles.screen, elementStyle]}>
+      { children }
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const styles = createStyles({
   screen: {
     flex: 1,
     backgroundColor: variables.color.white

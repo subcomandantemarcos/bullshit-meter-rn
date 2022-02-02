@@ -9,34 +9,37 @@ const defaultExpoConfig: ExpoConfig = {
   description: 'It\'s a News Site',
   entryPoint: './src/app/index.tsx',
   slug: 'bullshit-meter-rn',
+  scheme: 'myapp',
   owner: 'Sergey Zheleshchenko',
   privacy: 'hidden',
   platforms: ['android'],
   githubUrl: 'https://github.com/subcomandantemarcos/bullshit-meter-rn',
   orientation: 'portrait',
-  icon: './assets/icon.png',
+  icon: './src/assets/images/icon.png',
   splash: {
-    image: './assets/splash.png',
+    image: './src/assets/images/splash.png',
     resizeMode: 'contain',
     backgroundColor: '#ffffff'
   },
   updates: {
     fallbackToCacheTimeout: 0
   },
-  assetBundlePatterns: [
-    '**/*'
-  ],
+  assetBundlePatterns: ['./src/assets/images/*', './src/assets/fonts/*', './src/assets/i18n/*'],
   ios: {
     'supportsTablet': true
   },
   android: {
     adaptiveIcon: {
-      foregroundImage: './assets/adaptive-icon.png',
+      foregroundImage: './src/assets/images/adaptive-icon.png',
       backgroundColor: '#FFFFFF'
     }
   },
   web: {
-    favicon: './assets/favicon.png'
+    favicon: './src/assets/images/favicon.png'
+  },
+  packagerOpts: {
+    config: 'metro.config.js',
+    sourceExts: ['ts', 'tsx', 'js', 'jsx', 'json', 'wasm', 'svg']
   },
   extra: defaultAppConfig
 }
