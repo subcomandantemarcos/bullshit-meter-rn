@@ -20,7 +20,6 @@ export function PublicNavigation(): JSX.Element {
         name='Login'
         component={LoginScreen}
       />
-      
     </Stack.Navigator>
   );
 }

@@ -1,6 +1,7 @@
 export const variables = {
   color: {
-    white: '#FFFFFF'
+    white: '#FFFFFF',
+    primary: '#7868E6'
   },
   fontSize: {},
   fontFamily: {
