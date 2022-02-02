@@ -48,10 +48,6 @@ module.exports = () => {
   if (process.env.APP_ENV === 'production') {
     return defaultExpoConfig;
   } else {
-    return {
-      ...defaultExpoConfig,
-      extra: defaultAppConfig
-    }
+    return defaultExpoConfig;
   }
 };
-
