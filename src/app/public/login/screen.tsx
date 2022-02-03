@@ -72,5 +72,5 @@ const styles = createStyles({
     color: 'black',
     fontSize: 28,
     textAlign: 'center'
-  },
+  }
 });
