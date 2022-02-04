@@ -37,7 +37,9 @@ const styles = createStyles({
     borderRadius: 15,
     alignItems: 'center',
     borderWidth: 1,
-    paddingVertical: 16
+    paddingVertical: 16,
+    flexDirection: 'row',
+    justifyContent: 'center'
   },
   buttonPrimary: {
     backgroundColor: variables.color.primary

@@ -1,44 +1,43 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
-import { AppButton } from '../../shared/button';
+import { Icons } from '../../../assets/icons';
+import { AppIconButton } from '../../shared/icon-button/component';
+import { IconButtonTheme, IconName } from '../../shared/icon-button/enums';
 import { AppScreen } from '../../shared/screen/component';
-import { Svg } from '../../shared/svg';
-import { createStyles, variables } from '../../styles';
+import { createStyles } from '../../styles';
 
 export function LoginScreen(): JSX.Element {
-  const Logo = Svg(require('../../../assets/images/logo.svg'));
-  const Apple = Svg(require('../../../assets/images/apple.svg'));
-  const Google = Svg(require('../../../assets/images/google.svg'));
-  const Facebook = Svg(require('../../../assets/images/facebook.svg'));
-
   return (
     <AppScreen elementStyle={styles.screen}>
-      <View style={styles.headerScreen}>
-        <Logo />
-        <Text style={[styles.text, { width: '80%' }]}>Stay informed about everything!</Text>
+      <View style={styles.logoContainer}>
+        <Icons.logo />
+        <Text style={styles.title}>Stay informed about everything!</Text>
       </View>
-      <View style={styles.mainScreen}>
-        <Image style={{ minWidth: '100%', height: '100%', resizeMode: 'cover' }} source={require('../../../assets/images/login-foreground.png')} />
+      <View style={styles.imageContainer}>
+        <Image
+          style={styles.image}
+          source={require('../../../assets/images/login-foreground.png')}
+        />
       </View>
       <View style={styles.buttonsContainer}>
-        <AppButton style={{ backgroundColor: 'black' }}>
-          <View style={styles.iconButton}>
-            <Apple />
-            <Text style={{ color: 'white', marginLeft: 10, lineHeight: 22 }}>Continue with apple</Text>
-          </View>
-        </AppButton>
-        <AppButton style={{ borderColor: variables.color.blue }} isOutlined>
-          <View style={styles.iconButton}>
-            <Google />
-            <Text style={{ color: variables.color.blue, marginLeft: 10, lineHeight: 22 }}>Continue with google</Text>
-          </View>
-        </AppButton>
-        <AppButton style={{ backgroundColor: variables.color.blueDark, borderColor: variables.color.blueDark }}>
-          <View style={styles.iconButton}>
-            <Facebook />
-            <Text style={{ color: variables.color.white, marginLeft: 10, lineHeight: 22 }}>Continue with facebook</Text>
-          </View>
-        </AppButton>
+        <AppIconButton
+          style={styles.button}
+          iconName={IconName.GOOGLE}
+          theme={IconButtonTheme.GOOGLE}
+          title="Continue with google"
+        />
+        <AppIconButton
+          style={styles.button}
+          iconName={IconName.APPLE}
+          theme={IconButtonTheme.APPLE}
+          title="Continue with apple"
+        />
+        <AppIconButton
+          style={styles.button}
+          iconName={IconName.FACEBOOK}
+          theme={IconButtonTheme.FACEBOOK}
+          title="Continue with facebook"
+        />
       </View>
     </AppScreen>
   );
@@ -47,30 +46,39 @@ export function LoginScreen(): JSX.Element {
 const styles = createStyles({
   screen: {
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
+  },
+  logoContainer: {
+    paddingTop: 30,
+    alignItems: 'center',
     paddingHorizontal: 22
+  },
+  title: {
+    marginTop: 20,
+    color: 'black',
+    fontSize: 28,
+    textAlign: 'center'
   },
   iconButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center'
   },
-  headerScreen: {
-    marginTop: 30,
-    alignItems: 'center'
-  },
-  mainScreen: {
+  imageContainer: {
+    position: 'relative',
     width: '100%',
-    aspectRatio: 1 * 2.09
+    height: '25%',
+    marginVertical: 10
+  },
+  image: {
+    width: '100%',
+    height: '100%'
   },
   buttonsContainer: {
-    marginBottom: 40,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingHorizontal: 22
   },
-  text: {
-    color: 'black',
-    fontSize: 28,
-    textAlign: 'center'
+  button: {
+    marginBottom: 16
   }
 });
