@@ -6,8 +6,13 @@ export const variables = {
     blue: '#4AA9EE',
     blueDark: '#1B6DD1'
   },
-  fontSize: {},
+  fontSize: {
+    regular: '1rem', // 16px
+    large: '1.75rem' // 28px
+  },
   fontFamily: {
-    large: '2rem'
+    sfCompactNormal: 'SFCompactNormal',
+    sfCompactSemiBold: 'SFCompactSemiBold',
+    sfCompactBold: 'SFCompactBold'
   }
 };

@@ -76,6 +76,7 @@ const textStyles = createStyles({
   text: {
     color: 'white',
     fontSize: 16,
+    fontFamily: variables.fontFamily.sfCompactSemiBold,
     textAlign: 'center',
     textAlignVertical: 'center',
     lineHeight: 22,

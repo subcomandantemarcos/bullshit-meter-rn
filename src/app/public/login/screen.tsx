@@ -4,7 +4,7 @@ import { Icons } from '../../../assets/icons';
 import { AppIconButton } from '../../shared/icon-button/component';
 import { IconButtonTheme, IconName } from '../../shared/icon-button/enums';
 import { AppScreen } from '../../shared/screen/component';
-import { createStyles } from '../../styles';
+import { createStyles, variables } from '../../styles';
 
 export function LoginScreen(): JSX.Element {
   return (
@@ -57,7 +57,8 @@ const styles = createStyles({
     marginTop: 20,
     color: 'black',
     fontSize: 28,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: variables.fontFamily.sfCompactSemiBold
   },
   iconButton: {
     flexDirection: 'row',
