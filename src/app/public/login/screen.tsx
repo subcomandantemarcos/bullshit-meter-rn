@@ -7,6 +7,8 @@ import { AppScreen } from '../../shared/screen/component';
 import { createStyles, variables } from '../../styles';
 
 export function LoginScreen(): JSX.Element {
+  const { } = 
+
   return (
     <AppScreen elementStyle={styles.screen}>
       <View style={styles.logoContainer}>
