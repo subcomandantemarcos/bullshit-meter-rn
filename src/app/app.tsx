@@ -2,11 +2,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as Localization from 'expo-localization';
 import I18n from 'i18n-js';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { appLinking } from './linking';
 import { PublicNavigation } from './public/navigation';
 import { navigationRef, navigationTheme } from './shared/navigation';
+import { AppActions, store } from './shared/store';
 import { createStyles, variables } from './styles';
 
 const Stack = createStackNavigator();
@@ -16,11 +17,15 @@ export function App(): JSX.Element {
     en: require('./../assets/i18n/en.json')
   };
 
-  const locale = Localization?.locale;
+  const locale = Localization.locale;
   I18n.locale = locale || 'en';
 
+  useEffect(() => {
+    store.dispatch(AppActions.init());
+  }, []);
+
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.screen}>
       <NavigationContainer
         linking={appLinking}
         theme={navigationTheme}
