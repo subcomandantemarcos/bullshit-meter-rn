@@ -1,18 +1,20 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 import { Icons } from '../../../assets/icons';
+import { useTranslation } from '../../shared/i18n';
 import { AppIconButton } from '../../shared/icon-button/component';
 import { IconButtonTheme, IconName } from '../../shared/icon-button/enums';
 import { AppScreen } from '../../shared/screen/component';
 import { createStyles, variables } from '../../styles';
 
 export function LoginScreen(): JSX.Element {
+  const translate = useTranslation('PUBLIC.LOGIN');
 
   return (
     <AppScreen elementStyle={styles.screen}>
       <View style={styles.logoContainer}>
         <Icons.logo />
-        <Text style={styles.title}>Stay informed about everything!</Text>
+        <Text style={styles.title}>{translate('TITLE')}!</Text>
       </View>
       <View style={styles.imageContainer}>
         <Image
@@ -25,19 +27,19 @@ export function LoginScreen(): JSX.Element {
           style={styles.button}
           iconName={IconName.GOOGLE}
           theme={IconButtonTheme.GOOGLE}
-          title="Continue with google"
+          title={translate('BUTTON_GOOGLE')}
         />
         <AppIconButton
           style={styles.button}
           iconName={IconName.APPLE}
           theme={IconButtonTheme.APPLE}
-          title="Continue with apple"
+          title={translate('BUTTON_APPLE')}
         />
         <AppIconButton
           style={styles.button}
           iconName={IconName.FACEBOOK}
           theme={IconButtonTheme.FACEBOOK}
-          title="Continue with facebook"
+          title={translate('BUTTON_FACEBOOK')}
         />
       </View>
     </AppScreen>

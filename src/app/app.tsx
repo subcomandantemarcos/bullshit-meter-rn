@@ -14,11 +14,13 @@ const Stack = createStackNavigator();
 
 export function App(): JSX.Element {
   I18n.translations = {
-    en: require('./../assets/i18n/en.json')
+    en: require('./../assets/i18n/en.json'),
+    'ru-RU': require('./../assets/i18n/ru.json')
   };
 
   const locale = Localization.locale;
   I18n.locale = locale || 'en';
+  I18n.fallbacks = true;
 
   useEffect(() => {
     store.dispatch(AppActions.init());

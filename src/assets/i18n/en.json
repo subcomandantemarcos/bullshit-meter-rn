@@ -1,7 +1,10 @@
 {
   "PUBLIC": {
-    "SIGN_IN": {
-
+    "LOGIN": {
+      "TITLE": "Stay informed about everything",
+      "BUTTON_GOOGLE": "Continue with Google",
+      "BUTTON_FACEBOOK": "Continue with Facebook",
+      "BUTTON_APPLE": "Continue with Apple"
     }
   },
   "PRIVATE": {

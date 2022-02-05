@@ -1,7 +1,10 @@
 import { ExpoConfig } from '@expo/config';
 
 export const defaultAppConfig = {
-  production: false
+  production: false,
+  api: {
+    root: '/'
+  }
 };
 
 const defaultExpoConfig: ExpoConfig = {

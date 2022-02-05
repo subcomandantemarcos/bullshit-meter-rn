@@ -1,0 +1,13 @@
+{
+  "PUBLIC": {
+    "LOGIN": {
+      "TITLE": "Будь в курсе всего",
+      "BUTTON_GOOGLE": "Войти с помощью Google",
+      "BUTTON_FACEBOOK": "Войти с помощью Facebook",
+      "BUTTON_APPLE": "Войти с помощью Apple"
+    }
+  },
+  "PRIVATE": {
+
+  }
+}
